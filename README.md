@@ -30,6 +30,18 @@ To run the app do the following in the terminal
 3. Start the server with `flask run` or `python3 app.py`
 4. Open the [suggested link in the browser](http://127.0.0.1:5000/) to see the app
 
+## Docker
+
+### Building docker image
+
+1. Install docker according [to this instructions](https://docs.docker.com/engine/install/)
+2. Go to the app folder with `cd app_python`
+3. Build the image with `sudo docker build -t unaimillan/devops-app_python .`
+
+### Using existing image
+
+1. Run with `sudo docker run --rm -it -p 5000:5000 unaimillan/devops-app_python`
+
 ## Release History
 
 * 0.0.1
