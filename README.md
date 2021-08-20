@@ -40,7 +40,8 @@ To run the app do the following in the terminal
 
 ### Using existing image
 
-1. Run with `sudo docker run --rm -it -p 5000:5000 unaimillan/devops-app_python`
+1. Check the [existing image on Docker Hub](https://hub.docker.com/r/unaimillan/devops-app_python)
+2. Fetch it and run with `sudo docker run --rm -it -p 5000:5000 unaimillan/devops-app_python`
 
 ## Release History
 
