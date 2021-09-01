@@ -1,6 +1,8 @@
 # Python Web Application
 > Author: Mihail Kuskov, B18-SB-01
 
+![app_python workflow](https://github.com/unaimillan/devops/actions/workflows/app_python.yml/badge.svg)
+
 Simple python web application that shows current time in Moscow (UTC+3 timezone)
 
 ## Installation
@@ -49,6 +51,13 @@ To run the app unit testing, run the following in terminal
 
 1. Check the [existing image on Docker Hub](https://hub.docker.com/r/unaimillan/devops-app_python)
 2. Fetch it and run with `sudo docker run --rm -it -p 5000:5000 unaimillan/devops-app_python`
+
+## GitHub Actions CI
+
+This repo is utilizing the GitHub Action workflow to automatically test the application
+and also to build and upload the Docker image of application to Docker Hub
+
+The both actions are triggered on _Push_ events to the `master` branch
 
 ## Release History
 
