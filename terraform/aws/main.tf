@@ -18,5 +18,6 @@ resource "aws_instance" "app_python_server" {
 
   tags = {
     Name = "App Python VM"
+    ManagedBy = "Ansible"
   }
 }
