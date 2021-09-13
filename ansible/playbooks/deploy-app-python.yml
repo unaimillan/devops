@@ -1,0 +1,8 @@
+---
+- name: Deploy the Web Python Application
+  hosts: all
+  gather_facts: yes
+  remote_user: ubuntu
+  become: yes
+  roles:
+    - deploy_app_python

@@ -1,0 +1,30 @@
+---
+- name: Make sure pip3 is present on the system
+  package:
+    name: "python3-pip"
+    state: present
+
+- name: Install Python libraries for docker
+  pip:
+    name:
+      - docker==5.0.2
+      - docker-compose==1.29.2
+    state: present
+
+- name: Create a folder on VMs
+  file:
+    path: "{{ app_base_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Copy docker-compose.yml file to VMs
+  template:
+    src: docker-compose.yml
+    dest: "{{ app_base_dir }}/docker-compose.yml"
+    mode: 0700
+
+- name: Run python web application via docker-compose
+  community.docker.docker_compose:
+    pull: true
+    project_src: "{{ app_base_dir }}"
+    state: present

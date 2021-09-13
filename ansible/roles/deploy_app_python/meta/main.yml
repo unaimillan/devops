@@ -1,0 +1,15 @@
+---
+dependencies:
+  - role: install_docker_role
+
+galaxy_info:
+  role_name: deploy_app_python
+  author: unaimillan
+  description: Ansible role for deploying Python Web Application
+  license: "WTFPL"
+  min_ansible_version: 2.11.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal

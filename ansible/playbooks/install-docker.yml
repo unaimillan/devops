@@ -3,4 +3,4 @@
   remote_user: ubuntu
   become: yes
   roles:
-    - install-docker-role
+    - install_docker_role
