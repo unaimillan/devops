@@ -17,6 +17,21 @@
 
 ![](pics/3.png)
 
+## Screenshots for Lab 8
+
+### Prometheus Targets list
+
+![](pics/4.png)
+
+### Loki Dashboard in Grafana
+
+![](pics/5.png)
+
+### Prometheus Dashboard in Grafana
+
+![](pics/6.png)
+
+
 ## Best practices for Promtail, Loki and Grafana
 
 1. Utilize the static labels in Loki
