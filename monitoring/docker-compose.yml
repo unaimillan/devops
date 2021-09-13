@@ -1,0 +1,61 @@
+version: '3'
+
+services:
+  app_python:
+    container_name: app_python
+    image: "unaimillan/devops-app_python"
+    ports:
+      - "5000:5000"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini:ro
+      - grafana:/var/lib/grafana
+    ports:
+      - "127.0.0.1:3000:3000"
+#    environment:
+#      GF_SERVER_DOMAIN: "localhost"
+#      GF_SERVER_ROOT_URL: "5000"
+    user: "1000"
+#    depends_on:
+#      - prometheus
+    networks:
+      - monitoring
+
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    ports:
+      - "127.0.0.1:3100:3100"
+    command: -config.file=/etc/loki/config.yaml
+    volumes:
+      - ./loki:/etc/loki
+      - loki:/data/loki:ro
+    networks:
+      - monitoring
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    ports:
+      - "127.0.0.1:9080:9080"
+    volumes:
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - ./promtail:/etc/promtail-config/:ro
+    command: -config.file=/etc/promtail-config/promtail.yml
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+
+volumes:
+  grafana:
+  loki:
+  prometheus:
