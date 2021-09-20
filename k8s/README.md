@@ -35,3 +35,19 @@ service/kubernetes           ClusterIP      10.96.0.1       <none>        443/TC
 ![](images/2.png)
 
 ## Helm
+
+* Chart was installed by `helm install app-python ./app-python-chart` command
+
+Output of the command:
+
+```bash
+~ ❯ kubectl get pods,svc                                                        10s ⎈ minikube 23:15:51
+NAME                                              READY   STATUS    RESTARTS   AGE
+pod/app-python-app-python-chart-cbdc68b67-77jzb   1/1     Running   0          90s
+
+NAME                                  TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/app-python-app-python-chart   LoadBalancer   10.101.24.183   <pending>     5000:30987/TCP   91s
+service/kubernetes                    ClusterIP      10.96.0.1       <none>        443/TCP          112m
+```
+
+![](images/3.png)
