@@ -1,0 +1,13 @@
+# Inspired by example from https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-python-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: app-python
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
