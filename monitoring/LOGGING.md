@@ -7,29 +7,29 @@
 
 ### Promtail target files list
 
-![](pics/1.png)
+![](images/1.png)
 
 ### Loki's configuration window in Grafana
 
-![](pics/2.png)
+![](images/2.png)
 
 ### Grafana query interface for Loki
 
-![](pics/3.png)
+![](images/3.png)
 
 ## Screenshots for Lab 8
 
 ### Prometheus Targets list
 
-![](pics/4.png)
+![](images/4.png)
 
 ### Loki Dashboard in Grafana
 
-![](pics/5.png)
+![](images/5.png)
 
 ### Prometheus Dashboard in Grafana
 
-![](pics/6.png)
+![](images/6.png)
 
 
 ## Best practices for Promtail, Loki and Grafana
